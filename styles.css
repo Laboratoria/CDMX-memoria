@@ -1,12 +1,43 @@
+h2{
+    margin:0;
+}
 body{
+    background-color: black;
+    animation: travel 5s ease-in-out 0s infinite alternate;
+    font-family: Avenir;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRMZ6jOckKH2ub-kFFkWIrwCuCaK9W_4hGZBT9AhW4Zj7-lYSpp);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .ui{
+    padding:10px;
+    min-width: 520px;
+    border-radius: 5px;
+    background-color: rgb(243,215,41,1);
+    color:black;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+}
+.ui #restart{
+    padding: 20px 30px;
+    border:1px;
+    border-radius: 5px;
+    background:black;
+    color:#f3d729;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s;
+    box-shadow: 0px 1px 1px;
+}
+.ui #restart:hover{
+    box-shadow: 0px 2px 5px black;
+}
+.ui #restart:active{
+    box-shadow: 0px 2px 6px inset;
 }
 .cards{
     display: flex;
@@ -40,10 +71,10 @@ body{
     transition:all .3s ease;
     transform: perspective(600px);
     box-sizing: border-box;
-    box-shadow: 0px 10px 16px lightgrey;
+    box-shadow: 0px 10px 16px black;
 }
 .front{
-    border:7px solid white;
+    border:7px solid rgb(243,215,41,1);
     border-radius: 10px;
     position: absolute;
     top:0;
@@ -62,4 +93,9 @@ body{
 } */
 .card.flip .front, .card.flip .back{
     transform: perspective(400px) rotateY(180deg);
+}
+
+@keyframes travel{
+    0% {background-position: -20px;}
+    100% {background-position: 20px;}
 }
